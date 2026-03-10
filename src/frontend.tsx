@@ -8,11 +8,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { LoginPage } from "./pages/LoginPage"
+
+// bun add react-router
+import { BrowserRouter, Routes, Route } from "react-router";
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<LoginPage />} /> 
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
 
